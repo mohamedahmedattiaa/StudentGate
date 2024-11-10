@@ -1,0 +1,189 @@
+body{
+    margin: -5px;
+}
+.logo {
+    background-color: #1C3A6E;
+    margin: 0 -10px; 
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.header {
+    background-color: #1C3A6E;
+    text-align: center;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    margin: 0 -10px;
+    padding: 0px 20px;
+    padding: 5px; 
+    overflow-x: hidden;
+}
+
+
+
+.header img {
+    width: 30px;
+    color: white;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+
+.header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.header a:hover {
+    color: #ddd;
+}
+
+.header a:hover::after {
+    width: 100%;
+}
+
+
+
+Body h1 {
+    font-size: 80px;
+    text-align: center;
+    color: #1C3A6E;
+}
+
+.search,
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; 
+}
+
+
+.search input {
+    padding: 15px 25px; 
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc; 
+    width: 600px;
+    text-align: center;
+    font-size: 16px; 
+    outline: none; 
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.search input:focus {
+    border-color: #1C3A6E; 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.button input {
+    padding: 15px 25px; 
+    margin-top: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color:  #1C3A6E; 
+    color: white; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button input:hover {
+    background-color:  #1C3A6E; 
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.15); 
+}
+
+
+.market-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+
+.market-card > div {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.market-card > div:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.market-card img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+.market-card h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #1C3A6E;
+}
+
+.market-card h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.market-card h2 a:hover {
+    color: #0f274e;
+}
+
+
+.market-card input[type="button"] {
+    padding: 12px 20px;
+    background-color: #1C3A6E;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+
+    margin-top: auto;
+}
+
+.market-card input[type="button"]:hover {
+    background-color: #84aaf5;
+    transform: scale(1.05); 
+}
+
+
