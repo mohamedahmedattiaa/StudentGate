@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="note.css">
+    <title>Notes</title>
+    <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    sidebar.classList.toggle("active");
+    if (sidebar.classList.contains("active")) {
+        hamburgerMenu.style.left = "270px"; 
+    } else {
+        hamburgerMenu.style.left = "20px"; // Original position when sidebar is hidden
+    }
+}
+
+
+function updateYears() {
+    const college = document.getElementById("college-select").value;
+    const yearSelect = document.getElementById("year-filter");
+
+    
+    yearSelect.innerHTML = "";
+
+    
+    let years = [];
+    if (college === "medicine") {
+        years = ["1", "2", "3", "4", "5", "6", "7"];
+    } else if (college === "dentistry" || college === "pharmacy") {
+        years = ["1", "2", "3", "4", "5", "6"];
+    } else if (college === "computer") {
+        years = ["1", "2", "3", "4"];
+    }
+
+    
+    years.forEach(year => {
+        const option = document.createElement("option");
+        option.value = year;
+        option.textContent =' Year '+year;
+        yearSelect.appendChild(option);
+    });
+}
+
+
+document.addEventListener("DOMContentloaded",updateYears);
+
+function uploadNote() {
+    const college = document.getElementById("college-select").value;
+    const year = document.getElementById("year-filter").value;
+    const fileInput = document.getElementById("note-file");
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert("Please select a note to upload.");
+        return;
+    }
+
+    if (!college || !year) {
+        alert("Please select both your college and year.");
+        return;
+    }
+
+    
+    const formData = new FormData();
+    formData.append("note", file);
+    formData.append("college", college);
+    formData.append("year", year);
+
+    
+    fetch('/upload-note', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Note uploaded successfully!");
+        } else {
+            alert("Failed to upload note.");
+        }
+    })
+    .catch(error => {
+        console.error("Error uploading note:", error);
+        alert("Error uploading note.");
+    });
+}
+    </script>
+</head>
+<body>
+    
+
+        <div class="logo">
+            <img src="alex.jpg" alt="ANU">
+        </div>
+        <div class="header">
+            <a href="../Home/home.html">Home</a>
+            <a href="../Notes/note.html">Study Materials</a>
+            <a href="../Events/events.html"> events</a>
+            <a href="../foodcourt/Food court.html">Food court</a>
+            <a href="#">About Us</a>
+            <a href="../profile/profile.html"> profile</a>
+            
+        </div>
+ <div class="note">
+<h1>Notes</h1>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for Notes...." onkeyup="searchNotes()">
+</div>
+<br>
+ </div>
+ <div class="notes-grid">
+    <div class="note">
+        <img src="note1.jpg" alt="Note 1">
+        <div class="rating">
+            
+        </div>
+    </div>
+    <div class="note">
+        <img src="note2.jpg" alt="Note 2">
+        <div class="rating">
+           
+        </div>
+    </div>
+    <div class="note">
+        <img src="note3.jpg" alt="Note 3">
+        <div class="rating">
+            
+        </div>
+    </div>
+    <div class="note">
+        <img src="note4.jpg" alt="Note 4">
+        <div class="rating">
+           
+        </div>
+    </div>
+    <div class="note">
+        <img src="note5.jpg" alt="Note 5">
+        <div class="rating">
+           
+        </div>
+    </div>
+    <div class="note">
+        <img src="note5.jpg" alt="Note 6">
+        <div class="rating">
+          
+        </div>
+    </div>
+    
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    
+    
+    <div class="sidebar" id="sidebar">
+        <div class="filter">
+            <label>Choose your college:</label>
+            <select id="college-select" onchange="updateYears()">
+                <option value="medicine">medicine</option>
+                <option value="dentistry">Dentistry</option>
+                <option value="pharmacy">Pharmacy</option>
+                <option value="computer">Computer Science</option>
+            </select>
+        </div>
+        
+        <div class="filter">
+            <label>Choose your year:</label>
+            <select id="year-filter">
+                
+            </select>
+        </div>
+        
+        <div class="upload-section">
+            <span>Upload Notes:</span>
+            <input type="file" id="note-file" />
+            <button onclick="uploadNote()">Upload</button>
+        </div>
+    </div>
+
+</body>
+</html>

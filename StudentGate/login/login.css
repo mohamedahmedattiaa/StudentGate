@@ -1,8 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #003161;
+    background-color: #000B58;
+    background-image: url("photo.jpg");
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .login-container {
@@ -41,7 +43,7 @@ body {
 }
 
 .login-container h2 {
-    padding: 10px 0;
+    padding: 0px 0;
     text-align: center;
     color: white;
 }
@@ -63,7 +65,7 @@ body {
 
 .btn {
     padding: 10px 20px;
-    width: 83%;
+    width: 48%;
     font-size: 14px;
     font-weight: bold;
     color: #fff;
@@ -144,7 +146,7 @@ header {
     padding: 20px; 
     text-align: center; 
     display: inline-block;
-    animation: sideToside 2s ease-in-out infinite alternate;
+    animation: sideToside 4s ease-in-out infinite alternate;
 }
 
 @keyframes sideToside{
@@ -152,7 +154,7 @@ header {
         transform: translateX(0);
     }
     100%{
-        transform: translateX(100px);
+        transform: translateX(150%);
     }
 }
 

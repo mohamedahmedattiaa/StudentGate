@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="alex.jpg" alt="ANU">
+    </div>
+    <div class="header">
+        <a href="../Home/home.html">Home</a>
+        <a href="../Notes/note.html">Study Materials</a>
+        <a href="../Events/events.html"> events</a>
+        <a href="../foodcourt/Food court.html">Food court</a>
+        <a href="#">About Us</a>
+        <a href="../profile/profile.html"> profile</a>
+        
+    </div>
+    </div>
+    <div class="profile-container">
+        
+        <img src="missing.png" alt="Profile Picture" class="profile-image" id="profile-pic">
+        
+       
+        <h1 class="profile-name" id="profile-name">Your Name</h1>
+        <p class="profile-info" id="profile-email">Email: your-email@example.com</p>
+        <p class="profile-info" id="profile-phone">Phone: your-phone-number</p>
+        <p class="profile-info" id="profile-location">Location: your-location</p>
+        
+        
+        <button class="edit-btn" onclick="showForm()">Edit Profile</button>
+    </div>
+
+    
+    <div class="form-container" id="form-container">
+        <form id="profile-form">
+            <h2>Edit Your Profile</h2>
+            
+            
+
+            
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" placeholder="Enter your phone number" required>
+            
+           
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Enter your location" required>
+            
+            
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" accept="image/*">
+            
+            
+            <button type="button" onclick="updateProfile()">Save</button>
+            <button type="button" onclick="hideForm()">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        function showForm() {
+            document.getElementById("form-container").style.display = "block";
+        }
+
+       
+        function hideForm() {
+            document.getElementById("form-container").style.display = "none";
+        }
+
+       
+        function updateProfile() {
+            
+            const phone = document.getElementById("phone").value;
+            const location = document.getElementById("location").value;
+            const fileInput = document.getElementById("profile-picture");
+
+            
+
+            document.getElementById("profile-phone").textContent = `Phone: ${phone}`;
+            document.getElementById("profile-location").textContent = `Location: ${location}`;
+
+            
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("profile-pic").src = e.target.result;
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+
+            
+            hideForm();
+        }
+    </script>
+</body>
+</html>
+

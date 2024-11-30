@@ -83,8 +83,6 @@ body {
     width: 100%;
 }
 
-/* Main content centered */
-/* تعديل قسم الـ content ليتوسط المساحة بين الـ header و footer */
 .content {
     display: flex;
     justify-content: center;
