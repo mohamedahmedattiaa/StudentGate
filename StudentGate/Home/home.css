@@ -138,12 +138,11 @@ font-size: 90px;
 }
 
 
-/* Overlay for the title and description */
 .card-content {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    background: rgba(0, 0, 0, 0.6); 
     color: white;
     padding: 10px;
     text-align: center;
@@ -174,9 +173,51 @@ font-size: 90px;
     .st p{
         stroke: #1C3A6E;
         width: 700px;
+        margin-bottom:30px;
+    }
+    .icon-section {
+        display: flex;
+        justify-content: space-around; 
+        align-items: center; 
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+    
+    .icon-box {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+        flex: 1; 
+        padding: 10px;
+    }
+    
+    .icon-box span {
+        font-size: 48px;
+        margin-bottom: 5px;
+        align-items: center;
+        margin-left: 75px;
     }
 
-/* Button styling */
+    .category .icon-box span.material-symbols-outlined {
+        color: #e59400; 
+    }
+    
+    .groups .icon-box span.material-symbols-outlined {
+        color: slateblue; 
+    }
+    
+    .apartment .icon-box span.material-symbols-outlined {
+        color: brown; 
+    }
+    
+    .icon-box pre {
+        font-size: 16px; 
+        margin: 0;
+        line-height: 1.5;
+    }
+    
+
 .button {
     display: inline-block;
     margin-top: 10px;
@@ -196,7 +237,7 @@ font-size: 90px;
 }
 
 
-/* Centered footer at the bottom */
+
 footer {
     background-color: #004080;
     color: #ffffff;
