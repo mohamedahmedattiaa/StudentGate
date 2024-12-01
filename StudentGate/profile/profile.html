@@ -15,7 +15,7 @@
         <a href="../Notes/note.html">Study Materials</a>
         <a href="../Events/events.html"> events</a>
         <a href="../foodcourt/Food court.html">Food court</a>
-        <a href="#">About Us</a>
+        <a href="../About Us/AboutUs.Html">About Us</a>
         <a href="../profile/profile.html"> profile</a>
         
     </div>
@@ -38,10 +38,13 @@
     <div class="form-container" id="form-container">
         <form id="profile-form">
             <h2>Edit Your Profile</h2>
-            
-            
 
+            <label for="Email">Username:</label>
+            <input type="text" id="Username" placeholder="Enter your phone number" required>
             
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" placeholder="Enter your phone number" required>
+
             <label for="phone">Phone:</label>
             <input type="text" id="phone" placeholder="Enter your phone number" required>
             
@@ -71,13 +74,14 @@
 
        
         function updateProfile() {
-            
+            const Username = document.getElementById("Username").value;
+            const email = document.getElementById("Email").value;
             const phone = document.getElementById("phone").value;
             const location = document.getElementById("location").value;
-            const fileInput = document.getElementById("profile-picture");
+            const fileInput = document.getElementById("profile-picture").value;
 
-            
-
+            document.getElementById("profile-name").textContent = `Name: ${Username}`;
+            document.getElementById("profile-email").textContent = `Email: ${email}`;
             document.getElementById("profile-phone").textContent = `Phone: ${phone}`;
             document.getElementById("profile-location").textContent = `Location: ${location}`;
 
