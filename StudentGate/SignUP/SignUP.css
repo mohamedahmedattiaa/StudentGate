@@ -1,135 +1,110 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000B58;
-    background-size: cover;
-    background-position: center;
+/* Reset Basic Styling */
+body, h1, h2, h3, p, label, input, select, textarea, button {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    color: white;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-.login-container {
-    background-color: rgba(28, 58, 110, 0.9);
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 1000px;
-    padding: 30px;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+body {
+    background-color: #000B58;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 16px;
+    padding: 0;
 }
-.form-section {
-    width: 50%;
-}
-
-.form-section h2 {
+header {
+    background: #1C3A6E;
+    color: #fff;
     text-align: center;
-    color: #ffffff;
-    font-size: 24px;
+    padding: 20px;
     margin-bottom: 20px;
 }
 
+header p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Form Container Styling */
+.SignIn-Container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #635902;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Form Section */
+form.form-section {
+    padding: 20px;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Form Labels and Inputs */
 label {
     display: block;
-    font-weight: bold;
     margin-bottom: 8px;
+    font-weight: bold;
 }
 
-input, select {
+input, select, textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 30px;
-    box-sizing: border-box;
-}
-
-input:focus, select:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 /* Buttons */
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.btn {
-    padding: 10px 20px;
-    width: 48%;
-    font-size: 14px;
-    font-weight: bold;
+button.btn {
+    background: #000000;
     color: white;
-    background-color: #000;
     border: none;
-    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.btn:hover {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    transform: scale(1.05);
+button.btn:hover {
+    background: #ffffff;
 }
 
-.image-section {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Dropdown Options (CS Specific) */
+#cs-department-options {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.image-section img {
-    width: 90%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Footer Styling */
 footer {
     text-align: center;
+    background: #f8f6f6;
     color: white;
-    padding: 10px;
-    background-color: #1C3A6E;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 footer a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    margin: 0 5px;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-header {
-    animation: slideIn 4s ease-in-out infinite alternate;
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(20%);
-    }
-}
