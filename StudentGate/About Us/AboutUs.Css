@@ -1,12 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #000B58;
+    background-color: white;
     color: white;
     margin: 0;
     padding: 0;
 }
+.logo {
+    background-color: #1C3A6E;
+    text-align: center;
+    margin-left: -20px;
 
-.header {
+}
+
+.logo img {
+    width: 150px;
+    margin: 10px;
+}
+
+.Navbar {
     background-color: #1C3A6E;
     text-align: center;
     border-bottom-left-radius: 70px;
@@ -19,7 +30,7 @@ body {
 
 
 
-.header img {
+.Navbar img {
     width: 30px;
     color: white;
     vertical-align: middle;
@@ -27,7 +38,7 @@ body {
 }
 
 
-.header a {
+.Navbar a {
     text-decoration: none;
     color: white;
     padding: 10px 15px;
@@ -37,7 +48,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.header a::after {
+.Navbar a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -48,11 +59,11 @@ body {
     transition: width 0.3s ease;
 }
 
-.header a:hover {
+.Navbar a:hover {
     color: #ddd;
 }
 
-.header a:hover::after {
+.Navbar a:hover::after {
     width: 100%;
 }
 
