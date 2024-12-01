@@ -10,11 +10,6 @@
     <div class="logo">
         <img src="alex.jpg" alt="logo">
     </div>
-    <!-- <header>
-        <p>Welcome! Please sign up to create your account.</p>
-        <p>If you face any issues, feel free to contact our support team.</p>
-    </header> -->
-
     <div class="SignIn-Container">
         <form class="form-section" action="SignUp.php" method="post">
             <h2>Create Your Account</h2>
@@ -50,8 +45,27 @@
             <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your full address" required></textarea>
             <br><br>
 
+            <label for="college">College:</label>
+            <select id="college" name="college" required>
+                <option value="">--Select College--</option>
+                <option value="cs">Computer Science</option>
+                <option value="medicine">Medicine</option>
+                <option value="engineering">Engineering</option>
+                <option value="business">Business</option>
+                <option value="arts">Arts</option>
+            </select>
+            
+            <div id="department-container" style="display:none;">
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <!-- Departments will be dynamically populated here -->
+                </select>
+            </div>
+            <br><br>
+
             <label for="year">Student Year:</label>
             <select id="year" name="student-year" required>
+                <option value="">--Select StudentYear--</option>
                 <option value="1">1st Year</option>
                 <option value="2">2nd Year</option>
                 <option value="3">3rd Year</option>
@@ -62,38 +76,6 @@
             </select>
             <br><br>
 
-            <label for="department">Department:</label>
-            <select id="department" name="department" required>
-                <option value="SIM">Software Industry and Multimedia</option>
-                <option value="IS">Information Systems</option>
-                <option value="CS">Computer Science</option>
-                <option value="MS">Medicine and Surgery Program</option>
-                <option value="ODS">Oral and Dental Surgery Program</option>
-                <option value="P">Pharmacy Program - Pharm D Clinical</option>
-                <option value="CCE">Computer and Communication Engineering Program</option>
-                <option value="DSAI">Data Science and Artificial Intelligence Program</option>
-                <option value="BF">Banking and Finance Program</option>
-                <option value="M">Management Program</option>
-                <option value="MRE">Mechatronics and Robotics Engineering Program</option>
-                <option value="EME">Electromechanical Engineering Program</option>
-                <option value="MLSCM">Marketing, Logistics and Supply Chain Management Program</option>
-                <option value="AIS">Accounting and Information Systems Program</option>
-                <option value="AUD">Architecture and Urban Design</option>
-                <option value="GSP">Geomatics and Surveying Program</option>
-                <option value="DMP">Digital Media Program</option>
-                <option value="ALP">Acoustics and Linguistics Program</option>
-                <option value="PNGEP">Petroleum and Natural Gas Engineering Program</option>
-                <option value="other">Other</option>
-            </select>
-            <br><br>
-
-            <div id="cs-department-options" style="display:none;">
-                <label for="cs-program">Please select a specific program:</label>
-                <br>
-                <button type="button" class="btn" onclick="selectAI()">Artificial Intelligence</button>
-                <button type="button" class="btn" onclick="selectIS()">Information Systems</button>
-            </div>
-            <br><br>
 
             <label for="education-level">Highest Level of Education:</label>
             <select id="education-level" name="education-level" required>
@@ -134,8 +116,10 @@
             <textarea id="scholarships" name="scholarships" rows="2" cols="50" placeholder="List any scholarships or awards" required></textarea>
             <br><br>
 
-            <button class="btn">Sign Up</button>
-            <br><br>
+            <div class="button-container">
+                <button class="btn login-btn"><a href="../Home/home.html">Login</a></button>
+                <button class="btn signup-btn"><a href="../SignUP/SignUp.html">Signup</a></button>
+            </div>
         </form>
     </div>
 
@@ -145,22 +129,79 @@
     </footer>
 
     <script>
-        document.getElementById('department').addEventListener('change', function() {
-            var csOptions = document.getElementById('cs-department-options');
-            if (this.value === 'CS') {
-                csOptions.style.display = 'block';
+        const departmentOptions = {
+            cs: [
+                { value: 'SIM', text: 'Software Industry and Multimedia' },
+                { value: 'IS', text: 'Information Systems' },
+                { value: 'DSAI', text: 'Data Science and Artificial Intelligence Program' },
+                { value: 'CS', text: 'Cyber Security' }
+            ],
+            medicine: [
+                { value: 'MS', text: 'Medicine and Surgery Program' },
+                { value: 'ODS', text: 'Oral and Dental Surgery Program' },
+                { value: 'P', text: 'Pharmacy Program - Pharm D Clinical' }
+            ],
+            engineering: [
+                { value: 'CCE', text: 'Computer and Communication Engineering Program' },
+                { value: 'MRE', text: 'Mechatronics and Robotics Engineering Program' },
+                { value: 'EME', text: 'Electromechanical Engineering Program' },
+                { value: 'AUD', text: 'Architecture and Urban Design' },
+                { value: 'PNGEP', text: 'Petroleum and Natural Gas Engineering Program' }
+            ],
+            business: [
+                { value: 'BF', text: 'Banking and Finance Program' },
+                { value: 'M', text: 'Management Program' },
+                { value: 'AIS', text: 'Accounting and Information Systems Program' },
+                { value: 'MLSCM', text: 'Marketing, Logistics and Supply Chain Management Program' }
+            ],
+            arts: [
+                { value: 'GSP', text: 'Geomatics and Surveying Program' },
+                { value: 'DMP', text: 'Digital Media Program' },
+                { value: 'ALP', text: 'Acoustics and Linguistics Program' }
+            ]
+        };
+    
+        document.getElementById('college').addEventListener('change', function () {
+            const college = this.value;
+            const departmentSelect = document.getElementById('department');
+            const departmentContainer = document.getElementById('department-container');
+    
+            // Clear previous department options
+            departmentSelect.innerHTML = '';
+    
+            if (college) {
+                departmentContainer.style.display = 'block';
+    
+                // Add default option
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.text = '--Select Department--';
+                departmentSelect.appendChild(defaultOption);
+    
+                // Populate departments based on college selection
+                departmentOptions[college].forEach(department => {
+                    const option = document.createElement('option');
+                    option.value = department.value;
+                    option.text = department.text;
+                    departmentSelect.appendChild(option);
+                });
             } else {
-                csOptions.style.display = 'none';
+                departmentContainer.style.display = 'none';
             }
         });
-
-        function selectAI() {
-            alert("You selected Artificial Intelligence.");
-        }
-
-        function selectIS() {
-            alert("You selected Information Systems.");
-        }
+    
+        document.getElementById('department').addEventListener('change', function () {
+            switch (this.value) {
+                case 'DSAI':
+                    alert('You selected Artificial Intelligence.');
+                    break;
+                case 'IS':
+                    alert('You selected Information Systems.');
+                    break;
+                default:
+                    alert('You selected ' + this.options[this.selectedIndex].text + '.');
+            }
+        });
     </script>
 </body>
 </html>

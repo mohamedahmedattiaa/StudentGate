@@ -74,22 +74,70 @@ input, select, textarea {
 }
 
 /* Buttons */
-button.btn {
-    background: #000000;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    width: 100%;
+.button-container {
+    display: flex;
+    justify-content: space-around;
     margin-top: 10px;
 }
 
-button.btn:hover {
-    background: #ffffff;
+.btn {
+    padding: 10px 20px;
+    width: 83%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.login-btn {
+    background-color: #000000;
+}
+
+.login-btn:hover {
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.signup-btn {
+    background-color: #000000;
+}
+
+.signup-btn:hover {
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.login-container a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+button:active {
+    background-color: #ccc;
+}
+
+input:focus {
+    outline: 2px solid #007bff;
+}
+
 
 /* Dropdown Options (CS Specific) */
 #cs-department-options {
@@ -101,12 +149,15 @@ button.btn:hover {
 
 /* Footer Styling */
 footer {
+    background-color: #004080;
+    color: #ffffff;
+    padding: 1rem;
     text-align: center;
-    background: #f8f6f6;
-    color: white;
-    padding: 10px 0;
-    margin-top: 20px;
-    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
 }
 
 footer a {
