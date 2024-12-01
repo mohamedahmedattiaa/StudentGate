@@ -25,13 +25,23 @@ header p {
     margin: 10px 0;
     font-size: 18px;
 }
+.logo {
+    background-color: #1C3A6E;
+    text-align: center;
+    margin-left: -20px;
 
+}
+
+.logo img {
+    width: 150px;
+    margin: 10px;
+}
 /* Form Container Styling */
 .SignIn-Container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background: #635902;
+    background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
