@@ -72,5 +72,20 @@ document.getElementById('department').addEventListener('change', function () {
     }
 });
 
-const hashedPassword = CryptoJS.SHA256(password).toString();  // hashing password using SHA_256 encryption
-localStorage.setItem('password', hashedPassword);
+
+document.querySelector('.signup-btn').addEventListener('click', (event) => {
+    event.preventDefault(); 
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    if (username && password && email) {
+        const hashedPassword = CryptoJS.SHA256(password).toString(); // hashing the password using SHA256 encrytion
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', hashedPassword);
+        localStorage.setItem('email', email);
+        alert('Sign-Up Successful! Redirecting to login...');
+        window.location.href = '../login/login.html';
+    } else {
+        alert('Please fill in all required fields.');
+    }
+});

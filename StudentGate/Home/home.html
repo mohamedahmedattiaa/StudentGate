@@ -11,63 +11,70 @@
 
 </head>
 <body>
-
     <div class="logo">
         <img src="photos/alex.jpg" alt="ANU">
     </div>
     <div class="header">
         <a href="../Home/home.html">Home</a>
         <a href="../Notes/note.html">Study Materials</a>
-        <a href="../Events/events.html"> events</a>
+        <a href="../Events/events.html">Events</a>
         <a href="../foodcourt/Food court.html">Food court</a>
         <a href="../About Us/AboutUs.Html">About Us</a>
-        <a href="../profile/profile.html"> profile</a>
+        <a href="../profile/profile.html">profile</a>
+
+        <div class="auth-buttons">
+            <button class="login-btn"><a href="../login/login.html">Login</a></button>
+            <button class="signup-btn"><a href="../SignUP/SignUp.html">SignUp</a></button>
+            <button class="logout-btn" style="display: none;" onclick="logout()">Logout</button>
+        </div>
+        
+    </div>
         
     </div>
     <div class="st">
-        <h1>Welcome <span>User!</span></h1>
-        <p>This site is for ANU students to help them. Trust yourself—you can be what you want!</p>
-        
+        <div id="welcome-message" style="display: none;">
+           <h1>Welcome <span id="username"></span>!</h1> 
+            <p>This site is for ANU students to help them. Trust yourself—you can be what you want!</p>
+        </div>
         <div class="icon-section">
             <div class="category">   
-            <div class="icon-box">
-                <span class="material-symbols-outlined">category</span>
-               <pre>
-                    "Master New Skills with Ease"
-                    "Learn Smarter, Not Harder"
-                    "Effortless Learning at Your Fingertips"
-                    "Simplify Your Learning Journey"
-                    "Accelerate Your Learning Process"
-               </pre>
+                <div class="icon-box">
+                    <span class="material-symbols-outlined">category</span>
+                    <pre>
+                        "Master New Skills with Ease"
+                        "Learn Smarter, Not Harder"
+                        "Effortless Learning at Your Fingertips"
+                        "Simplify Your Learning Journey"
+                        "Accelerate Your Learning Process"
+                    </pre>
+                </div>
             </div>
-        </div>
             <div class="apartment">    
-            <div class="icon-box">
-                <span class="material-symbols-outlined">apartment</span>
-                <pre>
-                    "Your Pathway to Academic Excellence"
-                    "Empowering Your College Experience"
-                    "Unlocking Opportunities for Success"
-                    "Explore, Learn, Grow at College"
-                    "Building a Strong Foundation for Your Future"
-                </pre>
+                <div class="icon-box">
+                    <span class="material-symbols-outlined">apartment</span>
+                    <pre>
+                        "Your Pathway to Academic Excellence"
+                        "Empowering Your College Experience"
+                        "Unlocking Opportunities for Success"
+                        "Explore, Learn, Grow at College"
+                        "Building a Strong Foundation for Your Future"
+                    </pre>
+                </div>
             </div>
-          </div>
             <div class="groups">   
-            <div class="icon-box">
-                <span class="material-symbols-outlined">groups</span>
-                <pre>
-                    "Your Pathway to Academic Excellence"
-                    "Empowering Your College Experience"
-                    "Unlocking Opportunities for Success"
-                    "Explore, Learn, Grow at College"
-                    "Building a Strong Foundation for Your Future"
-                </pre>
-            </div>
+                <div class="icon-box">
+                    <span class="material-symbols-outlined">groups</span>
+                    <pre>
+                        "Collaborate for Greater Success"
+                        "earning Together, Achieving More"
+                        "Join Forces and Grow Stronger"
+                        "Together We Rise, Together We Learn"
+                        "Empowering Communities for Knowledge Sharing"
+                    </pre>
+                </div>
             </div>
         </div>
     </div>
-
 <section class="content">
     <h1> Today`s News</h1>
     <div class="slider-container swiper">
@@ -163,9 +170,7 @@
                     <button class="button">View More</button>
                 </div>
             </div>
-            <!-- Repeat card structure for each slide -->
         </div>
-        <!-- Swiper pagination and navigation -->
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>

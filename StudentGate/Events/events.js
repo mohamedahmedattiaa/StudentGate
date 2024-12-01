@@ -1,31 +1,30 @@
-function filterEvents(category) {
-    const eventCards = document.querySelectorAll('.event-card');
-    
-    eventCards.forEach(card => {
-        if (category === 'all') {
-            card.style.display = 'block';
-        } else if (card.getAttribute('data-category') === category) {
-            card.style.display = 'block';
+document.querySelectorAll('.read-more').forEach(button => {
+    button.addEventListener('click', function() {
+        const card = this.closest('.event-card');
+        const eventStart = new Date(card.getAttribute('data-start'));
+        const eventEnd = new Date(card.getAttribute('data-end'));
+        const currentDate = new Date();
+
+        console.log("Current Date: " + currentDate);
+        console.log("Event Start: " + eventStart);
+        console.log("Event End: " + eventEnd);
+
+        // Check event status
+        if (currentDate < eventStart) {
+            alert("Event is Coming Soon!");
+        } else if (currentDate > eventEnd) {
+            alert("Event has Ended!");
         } else {
-            card.style.display = 'none';
+            window.location.href = "join-event.html";
         }
     });
-}
-function joinEvent() {
-    alert("Joining the event! You’ll receive more details soon.");
-}
+});
 
-function chooseEvent() {
-    alert("Please select an event from the list.");
-}
-
+// Filter Events (Upcoming, Past, All)
 function filterEvents(category) {
     const eventCards = document.querySelectorAll('.event-card');
-    
     eventCards.forEach(card => {
-        if (category === 'all') {
-            card.style.display = 'block';
-        } else if (card.getAttribute('data-category') === category) {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
             card.style.display = 'block';
         } else {
             card.style.display = 'none';

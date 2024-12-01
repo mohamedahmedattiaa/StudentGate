@@ -82,7 +82,6 @@ body {
 .header a:hover::after {
     width: 100%;
 }
-
 .extras {
     display: flex;
     align-items: center;

@@ -5,36 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexandria National University</title>
     <link rel="stylesheet" href="login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
 </head>
 <body>
     
     <header>
         <h2>Welcome, students of Alexandria National University</h2>
-        <!-- <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav> -->
     </header>
     <div class="login-container">
         <!-- Left side (form section) -->
-        <form class="form-section" action="login.php" method="post">
+        <form id="loginForm" class="form-section" action="#" method="post">
             <h2>Login with your account</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" maxlength="8" required>
+            <input type="password" id="password" name="password"  minlength="8" maxlength="20" required>
             <div class="button-container">
-                <button class="btn login-btn"><a href="../Home/home.html">Login</a></button>
-                <button class="btn signup-btn"><a href="../SignUP/SignUp.html">Signup</a></button>
+                <button type="submit" class="btn login-btn">Login</button>
+                <button type="button" class="btn signup-btn" onclick="signup()">Sign Up</button>
             </div>
-            <p>You don't have an account? <a class="l" href="register.html">Register now!</a></p>
             <p><a class="l" href="forgot_password.html">Forgot password?</a></p>
         </form>
-    
         <!-- Right side (image section) -->
         <div class="image-section">
             <img src="alex.jpg" alt="University Image">
@@ -46,5 +38,6 @@
         <p>&copy; 2024 Alexandria National University. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </footer>
+    <script src="login.js"></script>
 </body>
 </html>
