@@ -21,7 +21,7 @@ body {
 
 /* Header fixed at the top */
 .logo {
-    background-color: #1C3A6E;
+    background-color: #1C3A6E; 
     text-align: center;
     margin-left: -20px;
 
@@ -118,7 +118,9 @@ caption {
     margin-bottom: 10px;
     color: #333;
 }
-
+tr{
+    background-color: white;
+}
 td {
     padding: 15px;
     text-align: center;
@@ -137,6 +139,10 @@ td:first-child {
     font-weight: bold;
     color: #1C3A6E;
     
+}
+.menu{
+    background-color: white;
+    color: black;
 }
 .menu label{
     border-radius: 70%;
