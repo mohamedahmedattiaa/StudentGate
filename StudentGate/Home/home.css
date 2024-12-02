@@ -3,8 +3,6 @@
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    
-    
 }
 
 /* Layout adjustments */
@@ -18,16 +16,14 @@ body {
 /* Header fixed at the top */
 .logo {
     background-color: #1C3A6E;
-    text-align: center;   /*Make the logo in the center*/
-    margin-left: -20px;  /*Center it prefectly*/
-
+    text-align: center; /* Make the logo in the center */
+    margin-left: -20px; /* Center it perfectly */
 }
 
 .logo img {
     width: 150px;
-    margin: 10px; /*The border in the logo */
+    margin: 10px; /* Border around the logo */
 }
-
 
 .header {
     background-color: #1C3A6E;
@@ -35,12 +31,9 @@ body {
     border-bottom-left-radius: 70px;
     border-bottom-right-radius: 70px;
     margin: 0 -10px;
-    padding: 0px 20px;
-    padding: 5px; 
+    padding: 5px 20px; 
     overflow-x: hidden;
 }
-
-
 
 .header img {
     width: 30px;
@@ -49,9 +42,8 @@ body {
     margin-bottom: 10px;
 }
 
-
 .header a {
-    text-decoration: none; /*remove underline in link*/
+    text-decoration: none; /* Remove underline from links */
     color: white;
     padding: 10px 15px;
     font-size: 20px;
@@ -80,8 +72,8 @@ body {
 }
 
 .auth-buttons {
-    position: absolute; /* to make it in the perfect position*/
-    top: 10px; /* make the buttons on the top of the page*/
+    position: absolute; /* Fixed position */
+    top: 10px;
     right: 20px;
 }
 
@@ -92,14 +84,14 @@ body {
     border: none;
     border-radius: 30px;
     text-align: center;
-    padding: 30px;
+    padding: 10px 30px;
     height: 40px;
     width: 130px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.5s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .auth-buttons .login-btn:hover,
@@ -107,37 +99,22 @@ body {
 .auth-buttons .logout-btn:hover {
     background-color: #ffdb67;
     transform: scale(1.05);
-    transition: 0, 3 ease;
 }
-
-.auth-buttons span {
-    position: relative;
-    bottom: 25px;
-    right: 12px;
-}
-
-
-
 
 .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: calc(100vh - 140px); /* 70px لكل من الـ header و footer */
-    padding-top: 70px; /* مسافة لإظهار الـ header الثابت */
-    padding-bottom: 70px; /* مسافة لإظهار الـ footer الثابت */
-     display:inline-block;
-
+    height: calc(100vh - 140px); /* Adjust for header and footer */
+    padding-top: 70px; /* Space for header */
+    padding-bottom: 70px; /* Space for footer */
+    display: inline-block;
 }
-.content h1{
-    font-size: larger;
-    color: #1C3A6E;
-text-align: center;
-font-size: 90px;
-}   
 
-/* تعديل صندوق الـ slider ليبقى في المنتصف */
+.content h1 {
+    font-size: 90px;
+    color: #1C3A6E;
+    text-align: center;
+}
+
 .slider-container {
     max-width: 700px;
     width: 100%;
@@ -149,16 +126,15 @@ font-size: 90px;
     align-items: center;
 }
 
-/* ضبط صورة الكارد بحيث تبقى داخل الحدود */
 .card {
     width: 100%;
-    max-height: 400px; /* التحكم بارتفاع الكارد */
+    max-height: 400px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     border-radius: 15px;
     background-color: white;
-    position: relative; 
+    position: relative;
 }
 
 .card-image {
@@ -172,7 +148,6 @@ font-size: 90px;
     height: 100%;
     object-fit: cover;
 }
-
 
 .card-content {
     position: absolute;
@@ -194,7 +169,8 @@ font-size: 90px;
     font-size: 14px;
     color: #ccc;
 }
-.st{
+
+st{
     text-align: justify;
     display: block;
     align-items: normal;
@@ -222,9 +198,11 @@ font-size: 90px;
     text-align: center;
 }
 
+
+
 .icon-section {
     display: flex;
-    flex-wrap: wrap; /*to be responsive*/
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
@@ -244,126 +222,29 @@ font-size: 90px;
 .icon-box span {
     font-size: 48px;
     margin-bottom: 5px;
-    align-items: center;
-    justify-content: center;
-
 }
 
-    .category .icon-box span.material-symbols-outlined {
-        color: #e59400; 
-    }
-    
-    .groups .icon-box span.material-symbols-outlined {
-        color: slateblue; 
-    }
-    
-    .apartment .icon-box span.material-symbols-outlined {
-        color: brown; 
-    }
-    
-    .icon-box p {
-        font-size: 20px; 
-        margin: 0;
-        line-height: 1.5;
-        display: flex;
-        flex: 1;
-        flex-wrap: wrap;
-        white-space: pre-line;
-    }
-    
-
-.content {
-    width: 100%;
-    height: calc(100vh - 140px);  /* content slider */
-    padding-top: 70px;
-    padding-bottom: 70px; 
-     display:inline-block;
-
-}
-.content h1{
-    color: #1C3A6E;  /*header text of the slider*/
-    text-align: center;
-    font-size: 90px;
-}   
-
-
-.slider-container { /*Make the slider in the middle*/
-    max-width: 700px;
-    width: 100%;
-    background-color: #f0f0f0;
-    border-radius: 15px;
+.category .icon-box span.material-symbols-outlined {
+    color: #e59400;
 }
 
-/* ضبط صورة الكارد بحيث تبقى داخل الحدود */
-.card {
-    width: 100%;
-    max-height: 400px; /* التحكم بارتفاع الكارد */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 15px;
-    background-color: white;
-    position: relative; 
+.groups .icon-box span.material-symbols-outlined {
+    color: slateblue;
 }
 
-.card-image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.apartment .icon-box span.material-symbols-outlined {
+    color: brown;
 }
 
-.card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.card-content {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6); 
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-.name {
+.icon-box p {
     font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0 5px;
+    margin: 0;
+    line-height: 1.5;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    white-space: pre-line;
 }
-
-.description {
-    font-size: 14px;
-    color: #ccc;
-}
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #ffa500;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-    bottom: 125px;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #e59400;
-}
-
-.welcome-message p{
-text-align: center;
-font-size: 25px;
-}
-.welcome-message h1  {
-    color: #004080;
-    }
 
 footer {
     background-color: #004080;
@@ -390,12 +271,7 @@ footer {
     padding: 0.5rem;
     width: 300px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 15px 25px;
-    margin-top: 20px;
     border-radius: 20px;
-    border: 1px solid #ccc;
-    width: 300px;
     text-align: center;
     font-size: 16px;
     outline: none;
@@ -409,32 +285,19 @@ footer {
 
 .question-bar button {
     padding: 0.5rem 1rem;
-    background-color: #1a237e;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 20px;
-    position: relative;
-    top: 10px;
-    width: 100px;
-    padding: 15px 25px;
-    border-radius: 20px;
-    border: none;
     background-color: #1C3A6E;
     color: white;
-    font-size: 16px;
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
+    margin-left: 20px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .question-bar button:hover {
     background-color: #3949ab;
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.15);
 }
-
-
 
 .extras {
     display: flex;
@@ -448,12 +311,4 @@ footer {
     border-radius: 5px;
     margin-right: 15px;
     text-decoration: none;
-}
-
-.extras .search-icon,
-.extras .language-switcher {
-    color: white;
-    font-size: 1.2em;
-    margin: 0 10px;
-    cursor: pointer;
 }
