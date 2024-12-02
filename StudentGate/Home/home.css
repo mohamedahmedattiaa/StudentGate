@@ -117,25 +117,74 @@ body {
 }
 
 
+.st{
+    text-align: justify;
+    letter-spacing: 0.5px;
+    font-size: 10px;
+}
 
+.st span {
+    color: #004080;
+}
 
-.content {
+.st p {
+    stroke: #1C3A6E;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.st h1 {
+    font-size: 30px; /* welcome text */
+    text-align: center;
+}
+
+.icon-section {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    /*to be responsive*/
+    justify-content: space-around;
     align-items: center;
+    gap: 20px;
     width: 100%;
-    height: calc(100vh - 140px); /* 70px لكل من الـ header و footer */
-    padding-top: 70px; /* مسافة لإظهار الـ header الثابت */
-    padding-bottom: 70px; /* مسافة لإظهار الـ footer الثابت */
-     display:inline-block;
+}
+
+.icon-box {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: auto;
+    padding: 10px;
+    justify-content: center;
+}
+
+.icon-box span {
+    font-size: 48px;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
 
 }
-.content h1{
-    font-size: larger;
-    color: #1C3A6E;
-text-align: center;
-font-size: 90px;
-}   
+
+    .category .icon-box span.material-symbols-outlined {
+        color: #e59400; 
+    }
+    
+    .groups .icon-box span.material-symbols-outlined {
+        color: slateblue; 
+    }
+    
+    .apartment .icon-box span.material-symbols-outlined {
+        color: brown; 
+    }
+    
+    .icon-box pre {
+        font-size: 16px; 
+        margin: 0;
+        line-height: 1.5;
+    }
+
+
 
 /* تعديل صندوق الـ slider ليبقى في المنتصف */
 .slider-container {
@@ -194,80 +243,6 @@ font-size: 90px;
     font-size: 14px;
     color: #ccc;
 }
-.st{
-    text-align: justify;
-    display: block;
-    align-items: normal;
-    letter-spacing: 0.5px;
-    margin: 30px;
-    font-size: 10px;
-    margin-top: 30px;
-    padding: 20px;
-    flex-direction: column;
-
-}
-
-.st span {
-    color: #004080;
-}
-
-.st p {
-    stroke: #1C3A6E;
-    width: 90%px;
-    margin-bottom: 30px;
-}
-
-.st h1 {
-    font-size: 30px;
-    text-align: center;
-}
-
-.icon-section {
-    display: flex;
-    flex-wrap: wrap;
-    /*to be responsive*/
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-}
-
-.icon-box {
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex: auto;
-    padding: 10px;
-    justify-content: center;
-}
-
-.icon-box span {
-    font-size: 48px;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: center;
-
-}
-
-    .category .icon-box span.material-symbols-outlined {
-        color: #e59400; 
-    }
-    
-    .groups .icon-box span.material-symbols-outlined {
-        color: slateblue; 
-    }
-    
-    .apartment .icon-box span.material-symbols-outlined {
-        color: brown; 
-    }
-    
-    .icon-box pre {
-        font-size: 16px; 
-        margin: 0;
-        line-height: 1.5;
-    }
-    
 
 .content {
     width: 100%;
@@ -378,10 +353,6 @@ footer {
 }
 
 .question-bar input {
-    padding: 0.5rem;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     padding: 15px 25px;
     margin-top: 20px;
     border-radius: 20px;
@@ -399,12 +370,6 @@ footer {
 }
 
 .question-bar button {
-    padding: 0.5rem 1rem;
-    background-color: #1a237e;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     margin-left: 20px;
     position: relative;
     top: 10px;
