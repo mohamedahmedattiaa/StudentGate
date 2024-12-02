@@ -209,12 +209,13 @@ td:first-child {
     border-radius: 30px;
     text-align: center;
     padding: 30px;
-    height: 70px;
+    height: 40px;
     width: 130px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.5s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
 }
  .Cart button:hover{
     background-color: #ffdb67;
