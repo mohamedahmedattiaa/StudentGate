@@ -188,3 +188,53 @@ body {
 #profile-form button[type="button"]:nth-child(2) {
     background-color: #ccc;
 }
+.social-media-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 45px; /* Adjust space between icons */
+}
+
+/* Icon style */
+.social-icon {
+    font-size: 40px; /* Icon size */
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    display: inline-block; /* Ensure proper alignment */
+    padding: 15px; /* Add padding for the background circle */
+    border-radius: 50%; /* Circle background */
+    text-align: center;
+}
+
+/* Facebook Icon - Classic Facebook style */
+.social-icon.facebook {
+    background-color: #1877f2; /* Facebook blue */
+    color: white;
+}
+
+.social-icon.facebook:hover {
+    background-color: #0d4c8e; /* Darker blue for hover */
+    color: #fff; /* Keep text white */
+}
+
+/* LinkedIn Icon - White text on blue background */
+.social-icon.linkedin {
+    background-color: #0077b5; /* LinkedIn blue */
+    color: white;
+}
+
+.social-icon.linkedin:hover {
+    background-color: #005b8f; /* Darker blue for hover */
+    color: #fff; /* Keep text white */
+}
+
+/* GitHub Icon - GitHub black */
+.social-icon.github {
+    background-color: black; /* GitHub's classic black background */
+    color: white;
+}
+
+.social-icon.github:hover {
+    background-color: #333333; /* Slightly darker black on hover */
+    color: white;
+}
+
