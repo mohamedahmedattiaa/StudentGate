@@ -218,14 +218,13 @@ font-size: 90px;
 }
 
 .st h1 {
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
 }
 
 .icon-section {
     display: flex;
-    flex-wrap: wrap;
-    /*to be responsive*/
+    flex-wrap: wrap; /*to be responsive*/
     justify-content: space-around;
     align-items: center;
     gap: 20px;
@@ -262,10 +261,14 @@ font-size: 90px;
         color: brown; 
     }
     
-    .icon-box pre {
-        font-size: 16px; 
+    .icon-box p {
+        font-size: 20px; 
         margin: 0;
         line-height: 1.5;
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        white-space: pre-line;
     }
     
 
@@ -354,7 +357,13 @@ font-size: 90px;
     background-color: #e59400;
 }
 
-
+.welcome-message p{
+text-align: center;
+font-size: 25px;
+}
+.welcome-message h1  {
+    color: #004080;
+    }
 
 footer {
     background-color: #004080;
