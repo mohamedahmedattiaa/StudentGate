@@ -1,3 +1,4 @@
+// Department options based on the selected college
 const departmentOptions = {
     cs: [
         { value: 'SIM', text: 'Software Industry and Multimedia' },
@@ -30,6 +31,7 @@ const departmentOptions = {
     ]
 };
 
+// Handle college selection change and dynamically update the department list
 document.getElementById('college').addEventListener('change', function () {
     const college = this.value;
     const departmentSelect = document.getElementById('department');
@@ -59,6 +61,7 @@ document.getElementById('college').addEventListener('change', function () {
     }
 });
 
+// Handle department selection change (with an alert)
 document.getElementById('department').addEventListener('change', function () {
     switch (this.value) {
         case 'DSAI':
@@ -72,19 +75,42 @@ document.getElementById('department').addEventListener('change', function () {
     }
 });
 
-
+// Handle the sign-up button click event
 document.querySelector('.signup-btn').addEventListener('click', (event) => {
-    event.preventDefault(); 
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form values
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const email = document.getElementById('email').value;
-    if (username && password && email) {
-        const hashedPassword = CryptoJS.SHA256(password).toString(); // hashing the password using SHA256 encrytion
+    const gender = document.getElementById('gender').value;
+    const birth = document.getElementById('birth').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const college = document.getElementById('college').value;
+    const department = document.getElementById('department').value;
+    const year = document.getElementById('year').value;
+    const educationLevel = document.getElementById('education-level').value;
+
+    // Validate required fields
+    if (username && password && email && gender && birth && phone && address && college && year && educationLevel) {
+        const hashedPassword = CryptoJS.SHA256(password).toString(); // Hash the password using SHA256
+
+        // Save all data to localStorage
         localStorage.setItem('username', username);
         localStorage.setItem('password', hashedPassword);
         localStorage.setItem('email', email);
+        localStorage.setItem('gender', gender);
+        localStorage.setItem('birth', birth);
+        localStorage.setItem('phone', phone);
+        localStorage.setItem('address', address);
+        localStorage.setItem('college', college);
+        localStorage.setItem('department', department);
+        localStorage.setItem('year', year);
+        localStorage.setItem('educationLevel', educationLevel);
+
         alert('Sign-Up Successful! Redirecting to login...');
-        window.location.href = '../login/login.html';
+        window.location.href = '../login/login.html'; // Redirect to login page after sign-up
     } else {
         alert('Please fill in all required fields.');
     }
