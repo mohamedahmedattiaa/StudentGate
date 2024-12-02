@@ -243,6 +243,80 @@ body {
     font-size: 14px;
     color: #ccc;
 }
+.st{
+    text-align: justify;
+    display: block;
+    align-items: normal;
+    letter-spacing: 0.5px;
+    margin: 30px;
+    font-size: 10px;
+    margin-top: 30px;
+    padding: 20px;
+    flex-direction: column;
+
+}
+
+.st span {
+    color: #004080;
+}
+
+.st p {
+    stroke: #1C3A6E;
+    width: 90%px;
+    margin-bottom: 30px;
+}
+
+.st h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.icon-section {
+    display: flex;
+    flex-wrap: wrap;
+    /*to be responsive*/
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.icon-box {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: auto;
+    padding: 10px;
+    justify-content: center;
+}
+
+.icon-box span {
+    font-size: 48px;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+    .category .icon-box span.material-symbols-outlined {
+        color: #e59400; 
+    }
+    
+    .groups .icon-box span.material-symbols-outlined {
+        color: slateblue; 
+    }
+    
+    .apartment .icon-box span.material-symbols-outlined {
+        color: brown; 
+    }
+    
+    .icon-box pre {
+        font-size: 16px; 
+        margin: 0;
+        line-height: 1.5;
+    }
+    
 
 .content {
     width: 100%;
@@ -329,7 +403,13 @@ body {
     background-color: #e59400;
 }
 
-
+.welcome-message p{
+text-align: center;
+font-size: 25px;
+}
+.welcome-message h1  {
+    color: #004080;
+    }
 
 footer {
     background-color: #004080;
