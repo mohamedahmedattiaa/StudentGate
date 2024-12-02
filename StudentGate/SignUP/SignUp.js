@@ -1,5 +1,5 @@
 // Department options based on the selected college
-const departmentOptions = {
+ const departmentOptions = {
     cs: [
         { value: 'SIM', text: 'Software Industry and Multimedia' },
         { value: 'IS', text: 'Information Systems' },
@@ -34,12 +34,12 @@ const departmentOptions = {
 // Handle college selection change and dynamically update the department list
 document.getElementById('college').addEventListener('change', function () {
     const college = this.value;
-    const departmentSelect = document.getElementById('department');
+    console.log('Selected College:', college); // Debugging log
+    const departmentSelect = document.getElementById('department'); 
     const departmentContainer = document.getElementById('department-container');
-
+    
     // Clear previous department options
-    departmentSelect.innerHTML = '';
-
+    departmentSelect.innerHTML = '';   
     if (college) {
         departmentContainer.style.display = 'block';
 
@@ -90,10 +90,25 @@ document.querySelector('.signup-btn').addEventListener('click', (event) => {
     const college = document.getElementById('college').value;
     const department = document.getElementById('department').value;
     const year = document.getElementById('year').value;
-    const educationLevel = document.getElementById('education-level').value;
 
-    // Validate required fields
-    if (username && password && email && gender && birth && phone && address && college && year && educationLevel) {
+    // Check if all required fields are filled
+    let errorMessage = '';
+
+    if (!username) errorMessage += 'Username is required.\n';
+    if (!password) errorMessage += 'Password is required.\n';
+    if (!email) errorMessage += 'Email is required.\n';
+    if (!gender) errorMessage += 'Gender is required.\n';
+    if (!birth) errorMessage += 'Birth date is required.\n';
+    if (!phone) errorMessage += 'Phone number is required.\n';
+    if (!address) errorMessage += 'Address is required.\n';
+    if (!college) errorMessage += 'College selection is required.\n';
+    if (!year) errorMessage += 'Student year is required.\n';
+
+    // If any field is missing, alert the user with the error messages
+    if (errorMessage) {
+        alert('Please fill in the following required fields:\n' + errorMessage);
+    } else {
+        // If all required fields are filled, proceed with saving the data
         const hashedPassword = CryptoJS.SHA256(password).toString(); // Hash the password using SHA256
 
         // Save all data to localStorage
@@ -107,11 +122,10 @@ document.querySelector('.signup-btn').addEventListener('click', (event) => {
         localStorage.setItem('college', college);
         localStorage.setItem('department', department);
         localStorage.setItem('year', year);
-        localStorage.setItem('educationLevel', educationLevel);
 
         alert('Sign-Up Successful! Redirecting to login...');
         window.location.href = '../login/login.html'; // Redirect to login page after sign-up
-    } else {
-        alert('Please fill in all required fields.');
     }
 });
+
+
