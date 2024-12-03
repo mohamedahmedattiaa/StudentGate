@@ -72,9 +72,9 @@ body {
 }
 
 .notes-grid {
-    display: none; /* Hide notes by default */
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    gap: 20px; /* Spacing between the notes */
+    display: none; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
 }
 
 .note img {
@@ -128,7 +128,7 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default */
+    left: -250px; 
     width: 250px;
     height: 100%;
     background-color: #333;

@@ -83,16 +83,16 @@ body {
     background-color: #dab744;
     border: none;
     border-radius: 30px;
-    text-align: center;
-    padding: 10px 30px;
     height: 40px;
     width: 130px;
     display: flex;
-    align-items: center;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
     cursor: pointer;
     transition: background-color 0.5s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
 }
+
 
 .auth-buttons .login-btn:hover,
 .auth-buttons .signup-btn:hover,
@@ -170,18 +170,17 @@ body {
     color: #ccc;
 }
 
-st{
-    text-align: justify;
-    display: block;
-    align-items: normal;
-    letter-spacing: 0.5px;
-    margin: 30px;
-    font-size: 10px;
-    margin-top: 30px;
-    padding: 20px;
+.st {
+    display: flex;
     flex-direction: column;
-
+    justify-content: center;  /* Centers vertically */
+    align-items: center;      /* Centers horizontally */
+    height: 100vh;            /* Full viewport height */
+    text-align: center;       /* Centers the text inside the div */
+    margin: 0;                /* Removes default margin */
+    padding: 0;               /* Removes default padding */
 }
+
 
 .st span {
     color: #004080;
@@ -191,6 +190,7 @@ st{
     stroke: #1C3A6E;
     width: 90%;
     margin-bottom: 30px;
+    font-size: 30px;
 }
 
 .st h1 {

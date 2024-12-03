@@ -23,35 +23,31 @@ window.onload = function () {
     const usernameDisplay = document.getElementById('username-display');
     if (username) {
         usernameDisplay.textContent = username;
-        document.getElementById('welcome-message').style.display = 'block';
     } else {
         usernameDisplay.textContent = 'User';
     }
 };
 window.addEventListener('DOMContentLoaded', function() {
-    // Retrieve the username from localStorage
     const currentUsername = localStorage.getItem('currentUsername');
-    
-    // Elements to show/hide based on login status
-    const loginBtn = document.querySelector('.login-btn');
-    const signupBtn = document.querySelector('.signup-btn');
-    const logoutBtn = document.querySelector('.logout-btn');
-    const welcomeMessage = document.getElementById('welcome-message');
+    const elements = {
+        loginBtn: document.querySelector('.login-btn'),
+        signupBtn: document.querySelector('.signup-btn'),
+        logoutBtn: document.querySelector('.logout-btn'),
+        usernameDisplay: document.getElementById('username')
+    };
 
-    // If the user is logged in, show the welcome message and hide login/sign up buttons
     if (currentUsername) {
-        welcomeMessage.style.display = 'block';
-        document.getElementById('username').textContent = currentUsername; // Display the username
-        loginBtn.style.display = 'none'; // Hide the login button
-        signupBtn.style.display = 'none'; // Hide the signup button
-        logoutBtn.style.display = 'block'; // Show the logout button
+        elements.usernameDisplay.textContent = currentUsername;
+        elements.loginBtn.style.display = 'none';
+        elements.signupBtn.style.display = 'none';
+        elements.logoutBtn.style.display = 'block';
     } else {
-        // If not logged in, show the login/signup buttons and hide the logout button
-        loginBtn.style.display = 'block';
-        signupBtn.style.display = 'block';
-        logoutBtn.style.display = 'none';
+        elements.loginBtn.style.display = 'block';
+        elements.signupBtn.style.display = 'block';
+        elements.logoutBtn.style.display = 'none';
     }
 });
+
 
 function logout() {
     // Clear the username from localStorage

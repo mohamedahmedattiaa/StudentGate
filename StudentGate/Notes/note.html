@@ -84,18 +84,10 @@
             });
         }
 
-        function addNoteToGrid(text, file) {
+        function addNoteToGrid( file) {
             const notesGrid = document.querySelector('.notes-grid');
 
            
-            if (text) {
-                const noteText = document.createElement("div");
-                noteText.classList.add("note-text");
-                noteText.textContent = text;
-                notesGrid.appendChild(noteText);
-            }
-
-            
             if (file) {
                 const note = document.createElement("div");
                 note.classList.add("note");
@@ -107,10 +99,12 @@
 
                 notesGrid.appendChild(note);
             }
+            notesGrid.style.display = "grid";
         }
     </script>
 </head>
 <body>
+
     <div class="logo">
         <img src="alex.jpg" alt="ANU">
     </div>
@@ -119,8 +113,8 @@
         <a href="../Notes/note.html">Study Materials</a>
         <a href="../Events/events.html">Events</a>
         <a href="../foodcourt/Food court.html">Food court</a>
-        <a href="../About Us/AboutUs.html">About Us</a>
-        <a href="../profile/profile.html">Profile</a>
+        <a href="../About Us/AboutUs.Html">About Us</a>
+        <a href="../profile/profile.html">profile</a>
     </div>
     
     <div class="note">

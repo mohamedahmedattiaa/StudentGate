@@ -9,8 +9,10 @@ document.querySelectorAll('.read-more').forEach(button => {
         console.log("Event Start: " + eventStart);
         console.log("Event End: " + eventEnd);
 
-        // Check event status
-        if (currentDate < eventStart) {
+        if(currentDate == eventStart){
+            alert("Event is Started");
+        }
+        else if (currentDate < eventStart) {
             alert("Event is Coming Soon!");
         } else if (currentDate > eventEnd) {
             alert("Event has Ended!");
