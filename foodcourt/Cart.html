@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandria University National</title>
+</head>
+<link rel="stylesheet" href="Cart.css">
+
+<body>
+    <div class="logo">
+        <img src="photos/alex.jpg" alt="ANU">
+    </div>
+    <div class="header">
+        <a href="../Home/home.html">Home</a>
+        <a href="../Notes/note.html">Study Materials</a>
+        <a href="../Events/events.html">Events</a>
+        <a href="../foodcourt/Food court.html">Food court</a>
+        <a href="../About Us/AboutUs.Html">About Us</a>
+        <a href="../profile/profile.html"> profile</a>
+    </div>
+
+    <div>
+        <table class="cart" style="border: 1px solid; margin-left: 10px;">
+            <caption>Cart</caption>
+            <tr>
+                <td>Product Name</td>
+                <td>Price</td>
+                <td></td>
+            </tr>
+            <!-- Cart items will go here -->
+            <tr style="background-color: #ffdb67;">
+                <td>Total</td>
+                <td colspan="2">price EGP</td>
+            </tr>
+        </table>
+        <div style="display: flex; align-items: center;">
+        <div class="check">
+            <button id="pay">Check Out</button>
+        </div>
+        <!-- Clear Cart Button -->
+        <div class="clear-cart">
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+    <script src="Cart.js"></script>
+</body>
+</html>

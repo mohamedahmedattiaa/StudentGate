@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="note.css">
+    <title>Notes</title>
+</head>
+
+<body>
+
+    <!-- Logo Section -->
+    <div class="logo">
+        <img src="../photos/alex.jpg" alt="ANU Logo">
+    </div>
+
+    <!-- Header Navigation -->
+    <div class="header">
+        <a href="../Home/home.html">Home</a>
+        <a href="../Notes/note.html">Study Materials</a>
+        <a href="../Events/events.html">Events</a>
+        <a href="../foodcourt/Food court.html">Food Court</a>
+        <a href="../About Us/AboutUs.html">About Us</a>
+        <a href="../profile/profile.html">Profile</a>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="note">
+        <h1>Notes</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for Notes..." onkeyup="searchNotes()" aria-label="Search Notes">
+        </div>
+        <br>
+    </div>
+
+    <div id="dynamic-upload-containers" class="upload-containers">
+        <!-- Containers will be dynamically added here -->
+    </div>
+
+    <!-- Hamburger Menu and Sidebar -->
+    <div class="hamburger-menu-sidebar">
+        <div class="hamburger-menu" onclick="toggleSidebar()" aria-label="Toggle Sidebar Menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <form id="upload-form" enctype="multipart/form-data" method="POST" onsubmit="uploadNote(event)">
+                <div class="filter">
+                    <label for="college-select">Choose your college:</label>
+                    <select id="college-select" name="college" onchange="updateYears()" required>
+                        <option value="" disabled selected>Select your college</option>
+                        <option value="medicine">Medicine</option>
+                        <option value="dentistry">Dentistry</option>
+                        <option value="pharmacy">Pharmacy</option>
+                        <option value="computer">Computer Science</option>
+                    </select>
+                </div>
+
+                <div class="filter">
+                    <label for="year-filter">Choose your year:</label>
+                    <select id="year-filter" name="year" required>
+                        <option value="" disabled selected>Select year</option>
+                    </select>
+                </div>
+                <!-- File Upload Field -->
+                <div class="upload-section">
+                    <label for="note-file">Upload Notes:</label>
+                    <input type="file" id="note-file" name="note-file" accept=".pdf,.doc,.docx,.txt" required>
+                </div>
+
+                <div class="upload-section">
+                    <label for="note-photo">Upload Image:</label>
+                    <input type="file" id="note-photo" name="note-photo" accept="image/*" required>
+                </div>
+                <div class="upload-section">
+                 <button type="submit">Upload</button>
+               </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="note.js"></script>
+</body>
+
+</html>

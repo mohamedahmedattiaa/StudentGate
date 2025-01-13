@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandria University National</title>
+    <link rel="stylesheet" href="SignUP.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> <!-- Encryption password using SHA_256-->
+</head>
+<body>
+    <div class="logo">
+        <img src="alex.jpg" alt="logo">
+    </div>
+    <div class="SignIn-Container">
+        <form id="signup-form" class="form-section" onsubmit="handleSubmit(event)" autocomplete="off">
+            <h2>Create Your Account</h2>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" title="Enter a unique username" required>
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="8" maxlength="20" title="Password must be 8-20 characters long" required>
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" title="Enter a valid email address" required>
+            <br><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">--Select Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+            <br><br>
+
+            <label for="birth">Birth Date:</label>
+            <input type="date" id="birth" name="birth" required>
+            <br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="^[0-9]{10}$" placeholder="Enter your 10-digit phone number" title="Phone number must be 10 digits" required>
+            <br><br>
+
+            <label for="address">Home Address:</label>
+            <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your full address" maxlength="200" title="Max 200 characters" required></textarea>
+            <br><br>
+
+            <label for="college">College:</label>
+            <select id="college" name="college" onchange="populateDepartments()" required>
+                <option value="">--Select College--</option>
+                <option value="cs">Computer Science</option>
+                <option value="medicine">Medicine</option>
+                <option value="engineering">Engineering</option>
+                <option value="business">Business</option>
+                <option value="arts">Arts</option>
+            </select>
+            <br><br>
+
+            <div id="department-container" style="display:none;">
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <!-- Departments will be dynamically populated here -->
+                </select>
+            </div>
+            <br><br>
+
+            <label for="year">Student Year:</label>
+            <select id="year" name="student-year" required>
+                <option value="">--Select Student Year--</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+                <option value="5">5th Year</option>
+                <option value="6">6th Year</option>
+                <option value="7">7th Year</option>
+            </select>
+            <br><br>
+
+            <label for="skills">Skills (e.g. programming languages, software):</label>
+            <textarea id="skills" name="skills" rows="4" cols="50" placeholder="List your skills" maxlength="300" title="Max 300 characters" required></textarea>
+            <br><br>
+
+            <label for="hobbies">Hobbies and Interests:</label>
+            <textarea id="hobbies" name="hobbies" rows="4" cols="50" placeholder="List your hobbies" maxlength="300" title="Max 300 characters" required></textarea>
+            <br><br>
+
+            <label for="languages">Languages Spoken:</label>
+            <textarea id="languages" name="languages" rows="2" cols="50" placeholder="List languages you speak" maxlength="100" title="Max 100 characters" required></textarea>
+            <br><br>
+
+            <label for="activities">Extracurricular Activities (e.g. sports, clubs):</label>
+            <textarea id="activities" name="activities" rows="4" cols="50" placeholder="List your extracurricular activities" maxlength="300" title="Max 300 characters" required></textarea>
+            <br><br>
+
+            <label for="scholarships">Scholarships or Awards:</label>
+            <textarea id="scholarships" name="scholarships" rows="2" cols="50" placeholder="List any scholarships or awards" maxlength="100" title="Max 100 characters" required></textarea>
+            <br><br>
+
+            <div class="button-container">
+                <button class="btn login-btn" type="button" onclick="window.location.href='../login/login.html'">Login</button>
+                <button class="btn signup-btn" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alexandria National University. All rights reserved.</p>
+        <p><a href="privacy.html" aria-label="Privacy Policy">Privacy Policy</a> | <a href="terms.html" aria-label="Terms of Service">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // Populate departments based on the selected college
+        function populateDepartments() {
+            const college = document.getElementById('college').value;
+            const departmentContainer = document.getElementById('department-container');
+            const department = document.getElementById('department');
+
+            // Clear previous options
+            department.innerHTML = '';
+
+            if (college) {
+                departmentContainer.style.display = 'block';
+                let departments = [];
+
+                switch (college) {
+                    case 'cs':
+                        departments = ['Software Engineering', 'Data Science', 'Cybersecurity'];
+                        break;
+                    case 'medicine':
+                        departments = ['General Medicine', 'Surgery', 'Pediatrics'];
+                        break;
+                    case 'engineering':
+                        departments = ['Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering'];
+                        break;
+                    case 'business':
+                        departments = ['Finance', 'Marketing', 'Human Resources'];
+                        break;
+                    case 'arts':
+                        departments = ['Literature', 'History', 'Fine Arts'];
+                        break;
+                }
+
+                departments.forEach(dept => {
+                    const option = document.createElement('option');
+                    option.value = dept.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = dept;
+                    department.appendChild(option);
+                });
+            } else {
+                departmentContainer.style.display = 'none';
+            }
+        }
+    </script>
+    <script src="SignUp.js"></script>
+</body>
+</html>
